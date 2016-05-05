@@ -1,0 +1,113 @@
+
+
+
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+  }
+
+
+  path.left {
+    fill: none;
+    stroke: #FC0200; /*updated by hung*/
+  /*  stroke-width: 3px;*/
+  }
+
+  path.right {
+    fill: none;
+    stroke: #e6ac00; /*updated by hung*/
+/*    stroke-width: 3px;*/
+  }
+
+ 
+  path.dotted {
+    stroke-dasharray: 5,2.5;
+  }
+  
+  path.path-inset {
+    fill: none;
+    stroke: black;
+    stroke-width: 1.5px;
+  }
+
+  /* yellow and red stand out against blue: https://cios233.community.uaf.edu/design-theory-lectures/color-theory/*/
+  circle.left {
+    fill: #FA0201; 
+  }
+
+  circle.right {
+    fill: #FCFF04; 
+  }
+
+  .label {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-anchor: middle;
+  }
+
+
+  #top-jobs {
+    font-size: 10px;
+    margin-top: 20px;
+  }
+
+  #info-bottom {
+    font-size: 10px;
+    margin-left: 60px;
+  }
+
+  #top-levels, #top-hearings {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  #top-levels table, #top-jobs table, #top-hearings table {
+    border: 1px solid silver;
+  }
+
+  #top-levels table {
+    display: inline-table;
+    margin-right: 10px;
+  }
+
+  #top-levels table td, #top-jobs table td {
+    padding: 1px 6px 1px 6px;
+  }
+  
+  div.tooltip {	
+     font : 12px "Helvetica Neue",arial,freesans,clean,sans-serif;
+     position: absolute;	
+     max-width: 300px;	
+     padding: 5px;
+     background: #FFF;	
+     border: 1px solid #2c7fb8;
+     pointer-events: none;	
+   }
+
+  .legend {
+    border : 1px solid #2c7fb8;
+    margin: 0 0 20px 0;
+  }
+  .legend ul {
+    padding: 10px 50px;
+    margin: 0px;
+    list-style-type: none;
+    text-align: center;
+  }
+  .legend ul li { 
+    display: inline; 
+    padding: 5px 10px;
+  }
+  .legend ul li .color { 
+    width : 20px;
+    height : 20px;
+    float: left;
+    margin: 0px 10px 0 0;
+  }
+  .legend ul li .label {
+    float: left;
+    margin: 0px 10px 0px 0px;
+    color: black !important;
+  }

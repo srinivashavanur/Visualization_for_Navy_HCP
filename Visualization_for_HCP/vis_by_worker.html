@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Navy</title>
+  
+  
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/justified-nav.css" rel="stylesheet">
+  	
+  	
+  	<link rel="stylesheet" href="http://sujeetsr.github.io/d3.slider/stylesheets/d3.slider.css" />
+    
+    <link rel="stylesheet" href="css/overview/overview.css" />
+    <link rel="stylesheet" href="css/detail/styledetail.css" />
+    
+      
+	
+</head>
+  <body>
+
+    <div class="container">
+
+      <!-- The justified navigation menu is meant for single line per list item.
+           Multiple lines will require custom code not provided by Bootstrap. -->
+    <div class="masthead" id ="divmasterhead">
+        <h1 class="text-muted">Navy Hearing Conservation</h1>
+        <nav>
+			<ul class="nav nav-justified">
+				<li ><a href="index.html">Home</a></li>
+				 
+					<li  class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Visualizations <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="vis_by_job_type.html">By Job Type</a></li>
+							<li role="separator" class="divider"></li>
+							<li><a href="vis_by_worker.html">By Worker</a></li>
+						</ul>
+		  
+					</li>
+				 
+			<li><a href="resource.html">Resource</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+	</div> <!-- end of menu -->
+
+
+
+	<!-- second detail for worker -->
+
+
+	<div class="container-fluid">
+
+		<div class="row">
+       		<div class="col-lg-1">
+       		</div>
+       		<div class="col-lg-8">
+	       		<br><br>
+	       		<h3 class="text-danger text-center">Overview of Worker by Year of Birth</h3>
+       		</div>
+		</div>
+  	
+       	<div class="row">
+       		<div class="col-lg-1" >
+       		</div>
+
+       		<!-- dropdown list on the left to select the year -->
+       		<div class="col-lg-1" >
+       		<br><br><br><br><br>
+
+       			<p>Select year of birth:</p>
+       			<a id="dropdown_birthyear"> </a>
+       			<div class="btn-group-vertical btn-group-md">
+       			<button id="Reset" class="btn btn-success">Reset</button>
+       				
+       			</div>
+       		</div>
+
+
+
+
+         	<div class="col-lg-6" id="overview_worker_id">
+         	  	
+         	</div>
+         	<div class="col-lg-1">
+         	</div>
+         	<div class="col-lg-2">
+         		<br><br><br><br><br><br>
+	            <h3 class="text-danger">Summary</h3>
+				  <p>Some stats of workers with birth year (<span id="selectedbirthyear"></span>):</p>                                                            
+				  <table class="table">
+				    <thead>
+				      <tr>
+				        <th>Stat</th>
+				        <th>Information</th>
+				      </tr>
+				    </thead>
+				    <tbody>
+				      <tr class="info">
+				        <td>Total Workers</td>
+				        <td><span id="totalworkerbybirthyear"></span></td>
+				      </tr>
+				     <tr >
+				        <td>Max Total Hearing</td>
+				        <td><span id="maxtotalhearing"></span></td>
+				      </tr>
+				      <tr class="info">
+				        <td>Min Total Hearing</td>
+				        <td><span id="mintotalhearing"></span></td>
+				      </tr>
+				    </tbody>
+				   </table>
+              	
+			</div>
+         		
+    	</div>
+	</div> <!-- end second overview worker -->
+	
+
+
+	<!-- second detail for worker -->
+<div id="second-detail-container">
+  <div class="container">
+    <div class = "row">
+      <hr/>
+      
+    </div>
+
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-6">
+        <br><br>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class = "row" id="divseconddetailtitle">
+      <div class = "col-md-2">
+        <!-- <b> Detail Hearing Levels For Worker: </b>  -->
+      </div>
+      <div class = "col-md-6">
+        <h3 class="text-danger text-center">Individual Hearing Level for Left and Right Ears (<span id="worker" style="color:red;">  </span>)</h3><br>
+      </div>
+      <div class = "col-md-3">
+        <h3 class="text-danger text-center">Individual Total Hearing Level</h3><br>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col-md-2"></div>
+      <div class = "col-md-6">
+        <div class="col-md-12">
+          <div id = "chartseconddetail"></div>
+        </div>
+        <div class="col-md-12" id="divlegend">
+            <div class="col-md-2"></div>
+            <div class="col-md-6 legend">
+              <div> <!-- legend div -->
+                <ul>
+                  <li>
+                    <div class="color" style="background-color: #FA0201;"></div>
+                    <span class="label">Left Ear</span>
+                  </li>
+                  <li>
+                    <div class="color" style="background-color: #FCFF04;"></div>
+                    <span class="label">Right Ear</span>
+                  </li>
+                </ul>
+              </div> <!-- end legend div -->
+            </div>
+
+        </div>
+        <div class="col-md-12">
+          <div id="slider" style="margin-left: 120px; width: 800px"></div>
+        </div>
+      </div>
+      <div class = "col-md-3">
+        <div id ="inset"></div>
+      </div>
+    </div>
+  </div><!-- end of second detail for worker vis -->
+
+	<!-- detail button -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-3">
+        <div class="col-lg-1">
+          <div class="buttonBox" id="divhidedetail">
+            <button id="hide_the_detail"    class="btn btn-warning">Hide Detail</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> <!-- hide detail button -->
+</div> <!-- second-detail-container -->
+
+<div class="container">
+    <div>
+    <footer id="footer" class="footer"></footer>
+    </div> 
+</div><!-- div container -->
+
+	<!-- scripts for the vis -->
+
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.4.13/d3.min.js"></script>
+		<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+		
+		<script type="text/javascript" src="js/d3.slider.js"></script>
+		
+		<!-- bootstrap -->
+ 		<script src="js/jquery-2.2.3.min.js"></script>
+    	<script src="js/bootstrap.js"></script>
+
+		<!-- overview -->
+		<script src="js/overview/secondoverview.js"></script>
+		
+		<!-- detail -->
+		<script type="text/javascript" src="js/detail/seconddetail.js"></script>
+
+		<!-- any kind of general code can put here 
+		- Title of charts -->
+		<script type="text/javascript" src="js/script.js"></script>	
+		
+		<script>
+  				// hide second detail when start
+  				$('#divhidedetail').hide();
+  				$('#chartseconddetail').hide();
+				$('#inset').hide();
+				$('#slider').hide();
+        $('#divlegend').hide();
+				document.getElementById('divseconddetailtitle').style.display = 'none';
+				
+				//$('#dropdown_birthyear').val(1928).attr("selected", "selected");
+				$("#dropdown_birthyear").val(1928);
+				
+		
+  		</script>
+    <div id="info" ></div>
+	
+
+  </body>
+</html>
